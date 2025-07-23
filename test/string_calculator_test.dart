@@ -26,6 +26,10 @@ void main() {
       test('single number returns value', () {
         expect(calculator.add('1'), equals(1));
       });
+
+      test('two comma separated numbers return sum', () {
+        expect(calculator.add('1,2'), equals(3));
+      });
     });
 
     group('Delimiter Support', () {
