@@ -1,22 +1,11 @@
+import 'package:string_calculator/exceptions.dart';
+
 /**
  * @author vancityAyush
  * Created on: July 24, 2025
  * String Calculator TDD implementation in Dart
  * Main StringCalculator class
  */
-
-/**
- * Custom exception thrown when negative numbers are encountered.
- */
-class NegativeNumberException implements Exception {
-  final String message;
-
-  NegativeNumberException(this.message);
-
-  @override
-  String toString() => message;
-}
-
 class StringCalculator {
   static const String _delimiter = r'[^0-9-]';
 
