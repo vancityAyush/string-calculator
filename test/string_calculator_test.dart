@@ -77,6 +77,10 @@ void main() {
           expect(e.toString(), equals('Negatives not allowed: -1, -10, -20'));
         }
       });
+
+      test('numbers greater than 1000 are ignored', () {
+        expect(calculator.add('2,1001,5'), equals(7));
+      });
     });
 
     group('Edge Cases', () {
