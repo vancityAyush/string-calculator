@@ -30,6 +30,10 @@ void main() {
       test('two comma separated numbers return sum', () {
         expect(calculator.add('1,2'), equals(3));
       });
+
+      test('multiple comma separated numbers return sum', () {
+        expect(calculator.add('1,2,3,4,5'), equals(15));
+      });
     });
 
     group('Delimiter Support', () {

@@ -19,34 +19,34 @@
   - Commit changes with message: "feat: implement basic add method to pass empty string test"
   - _Requirements: 1.1_
 
-- [-] 3. Implement single number handling (TDD Cycle 2)
+- [x] 3. Implement single number handling (TDD Cycle 2)
 - [x] 3.1 Write failing test for single number returns value
   - Add test case that verifies add("1") returns 1
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for single number returns value"
   - _Requirements: 2.1, 2.2_
 
-- [-] 3.2 Implement single number parsing
+- [x] 3.2 Implement single number parsing
   - Modify add method to parse and return single numbers
   - Ensure both empty string and single number tests pass (Green phase)
   - Commit changes with message: "feat: implement single number parsing"
   - _Requirements: 2.1, 2.2_
 
-- [ ] 4. Implement two comma-separated numbers (TDD Cycle 3)
-- [ ] 4.1 Write failing test for two comma-separated numbers
+- [x] 4. Implement two comma-separated numbers (TDD Cycle 3)
+- [x] 4.1 Write failing test for two comma-separated numbers
   - Add test case that verifies add("1,2") returns 3
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for two comma separated numbers"
   - _Requirements: 3.1, 3.2_
 
-- [ ] 4.2 Implement comma-separated number parsing
+- [x] 4.2 Implement comma-separated number parsing
   - Modify add method to split by comma and sum two numbers
   - Ensure all previous tests still pass (Green phase)
   - Commit changes with message: "feat: implement comma separated numbers parsing"
   - _Requirements: 3.1, 3.2_
 
-- [ ] 5. Implement multiple comma-separated numbers (TDD Cycle 4)
-- [ ] 5.1 Write failing test for multiple comma-separated numbers
+- [-] 5. Implement multiple comma-separated numbers (TDD Cycle 4)
+- [-] 5.1 Write failing test for multiple comma-separated numbers
   - Add test case that verifies add("1,2,3,4,5") returns 15
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for multiple comma separated numbers"
