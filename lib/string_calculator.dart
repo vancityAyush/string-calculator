@@ -9,11 +9,13 @@ class StringCalculator {
       return 0;
     }
     
-    // Split by comma and sum any amount of numbers
-    List<String> numberStrings = numbers.split(',');
+    // Split by comma and newline delimiters and sum any amount of numbers
+    List<String> numberStrings = numbers.split(RegExp(r'[,\n]'));
     int sum = 0;
     for (String numberString in numberStrings) {
-      sum += int.parse(numberString);
+      if (numberString.isNotEmpty) {
+        sum += int.parse(numberString);
+      }
     }
     return sum;
   }
