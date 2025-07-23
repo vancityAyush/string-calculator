@@ -46,13 +46,13 @@
   - _Requirements: 3.1, 3.2_
 
 - [-] 5. Implement multiple comma-separated numbers (TDD Cycle 4)
-- [-] 5.1 Write failing test for multiple comma-separated numbers
+- [x] 5.1 Write failing test for multiple comma-separated numbers
   - Add test case that verifies add("1,2,3,4,5") returns 15
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for multiple comma separated numbers"
   - _Requirements: 4.1, 4.2, 4.3_
 
-- [ ] 5.2 Implement unlimited number handling
+- [-] 5.2 Implement unlimited number handling
   - Enhance add method to handle any amount of comma-separated numbers
   - Ensure all previous tests still pass (Green phase)
   - Commit changes with message: "feat: handle unlimited numbers"

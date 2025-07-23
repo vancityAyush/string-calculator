@@ -9,16 +9,12 @@ class StringCalculator {
       return 0;
     }
     
-    // Split by comma - currently only handles up to 2 numbers
+    // Split by comma and sum any amount of numbers
     List<String> numberStrings = numbers.split(',');
-    
-    if (numberStrings.length == 1) {
-      return int.parse(numberStrings[0]);
-    } else if (numberStrings.length == 2) {
-      return int.parse(numberStrings[0]) + int.parse(numberStrings[1]);
-    } else {
-      // This will cause the test to fail for multiple numbers
-      throw UnsupportedError('Only up to 2 numbers supported currently');
+    int sum = 0;
+    for (String numberString in numberStrings) {
+      sum += int.parse(numberString);
     }
+    return sum;
   }
 }
