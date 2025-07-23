@@ -104,14 +104,14 @@
   - Include list of negative numbers in exception details
   - _Requirements: 7.1, 7.2_
 
-- [-] 9.2 Write failing test for single negative number exception
+- [x] 9.2 Write failing test for single negative number exception
   - Add test case that verifies add("-1") throws NegativeNumberException
   - Verify exception message contains "Negatives not allowed: -1"
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for negative numbers exception"
   - _Requirements: 7.1, 7.2_
 
-- [ ] 9.3 Implement negative number detection and exception throwing
+- [-] 9.3 Implement negative number detection and exception throwing
   - Add validation logic to detect negative numbers
   - Throw NegativeNumberException with appropriate message
   - Ensure all previous positive number tests still pass (Green phase)

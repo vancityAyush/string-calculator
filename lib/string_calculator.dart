@@ -33,11 +33,27 @@ class StringCalculator {
       // Use default delimiters (comma and newline)
       numberStrings = numbersSection.split(RegExp(r'[,\n]'));
     }
-    int sum = 0;
+    List<int> parsedNumbers = [];
+    List<int> negativeNumbers = [];
+    
     for (String numberString in numberStrings) {
       if (numberString.isNotEmpty) {
-        sum += int.parse(numberString);
+        int number = int.parse(numberString);
+        parsedNumbers.add(number);
+        if (number < 0) {
+          negativeNumbers.add(number);
+        }
       }
+    }
+    
+    // Check for negative numbers and throw exception if found
+    if (negativeNumbers.isNotEmpty) {
+      throw NegativeNumberException(negativeNumbers);
+    }
+    
+    int sum = 0;
+    for (int number in parsedNumbers) {
+      sum += number;
     }
     return sum;
   }
