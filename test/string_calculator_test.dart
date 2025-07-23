@@ -68,6 +68,15 @@ void main() {
           expect(e.toString(), contains('Negatives not allowed: -1'));
         }
       });
+
+      test('multiple negative numbers exception shows all negatives', () {
+        try {
+          calculator.add('-1,5,-10,-20');
+          fail('Expected NegativeNumberException to be thrown');
+        } catch (e) {
+          expect(e.toString(), equals('Negatives not allowed: -1, -10, -20'));
+        }
+      });
     });
 
     group('Edge Cases', () {
