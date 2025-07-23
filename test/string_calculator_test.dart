@@ -42,6 +42,10 @@ void main() {
       test('newline delimiters work', () {
         expect(calculator.add('1\n2'), equals(3));
       });
+
+      test('mixed delimiters work', () {
+        expect(calculator.add('1\n,2,3\n4,5'), equals(15));
+      });
     });
 
     group('Input Validation', () {
