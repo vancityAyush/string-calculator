@@ -22,6 +22,10 @@ void main() {
       test('empty string returns zero', () {
         expect(calculator.add(''), equals(0));
       });
+
+      test('single number returns value', () {
+        expect(calculator.add('1'), equals(1));
+      });
     });
 
     group('Delimiter Support', () {
