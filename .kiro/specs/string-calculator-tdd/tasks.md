@@ -118,7 +118,7 @@
   - Commit changes with message: "feat: throw exception for negative numbers"
   - _Requirements: 7.1, 7.2_
 
-- [-] 10. Implement multiple negative number handling (TDD Cycle 9)
+- [x] 10. Implement multiple negative number handling (TDD Cycle 9)
 - [x] 10.1 Write failing test for multiple negative numbers exception
   - Add test case that verifies add("-1,5,-10,-20") throws exception with all negatives
   - Verify exception message shows "Negatives not allowed: -1, -10, -20"
@@ -126,7 +126,7 @@
   - Commit changes with message: "test: add test for multiple negative numbers exception"
   - _Requirements: 7.3, 7.4_
 
-- [-] 10.2 Enhance exception to show all negative numbers
+- [x] 10.2 Enhance exception to show all negative numbers
   - Modify validation logic to collect all negative numbers
   - Update exception message to include all negatives found
   - Ensure all previous tests still pass (Green phase)
@@ -134,13 +134,13 @@
   - _Requirements: 7.3, 7.4_
 
 - [ ] 11. Implement large number filtering (TDD Cycle 10)
-- [ ] 11.1 Write failing test for ignoring numbers greater than 1000
+- [x] 11.1 Write failing test for ignoring numbers greater than 1000
   - Add test case that verifies add("2,1001,5") returns 7
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test to ignore numbers greater than 1000"
   - _Requirements: 8.1, 8.2, 8.3_
 
-- [ ] 11.2 Implement large number filtering logic
+- [x] 11.2 Implement large number filtering logic
   - Add logic to ignore numbers greater than 1000 in sum calculation
   - Ensure all previous tests still pass (Green phase)
   - Commit changes with message: "feat: ignore numbers greater than 1000"

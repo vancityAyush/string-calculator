@@ -85,6 +85,10 @@ void main() {
 
     group('Edge Cases', () {
       // Test cases will be added in subsequent TDD cycles
+      
+      test('any length delimiters work', () {
+        expect(calculator.add('//[***]\n1***2***3'), equals(6));
+      });
     });
   });
 }
