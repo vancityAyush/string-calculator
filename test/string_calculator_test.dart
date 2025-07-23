@@ -38,6 +38,10 @@ void main() {
 
     group('Delimiter Support', () {
       // Test cases will be added in subsequent TDD cycles
+      
+      test('newline delimiters work', () {
+        expect(calculator.add('1\n2'), equals(3));
+      });
     });
 
     group('Input Validation', () {
