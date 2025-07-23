@@ -106,6 +106,14 @@ void main() {
       test('multiple different delimiters work', () {
         expect(calculator.add('//[*][%]\n1*2%3'), equals(6));
       });
+
+      test('multiple different delimiters with more complex case', () {
+        expect(calculator.add('//[*][%][!]\n1*2%3!4'), equals(10));
+      });
+
+      test('multiple different delimiters with long delimiters', () {
+        expect(calculator.add('//[***][%%%]\n1***2%%%3'), equals(6));
+      });
     });
   });
 }

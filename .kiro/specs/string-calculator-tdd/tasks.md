@@ -160,14 +160,14 @@
   - Commit changes with message: "feat: support any length delimiters"
   - _Requirements: 9.1, 9.2, 9.3_
 
-- [ ] 13. Implement multiple custom delimiters (TDD Cycle 12)
-- [ ] 13.1 Write failing test for multiple different delimiters
+- [x] 13. Implement multiple custom delimiters (TDD Cycle 12)
+- [x] 13.1 Write failing test for multiple different delimiters
   - Add test case that verifies add("//[*][%]\n1*2%3") returns 6
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for multiple different delimiters"
   - _Requirements: 10.1, 10.2, 10.3_
 
-- [ ] 13.2 Implement multiple custom delimiter support
+- [x] 13.2 Implement multiple custom delimiter support
   - Enhance delimiter parsing to handle multiple bracket-enclosed delimiters
   - Support parsing with any of the defined custom delimiters
   - Ensure all previous tests still pass (Green phase)

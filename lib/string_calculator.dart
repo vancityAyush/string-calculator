@@ -74,19 +74,22 @@ class StringCalculator {
         if (delimiterSection.contains('[') && delimiterSection.contains(']')) {
           List<String> delimiters = [];
           int currentIndex = 0;
-          
+
           while (currentIndex < delimiterSection.length) {
             int startBracket = delimiterSection.indexOf('[', currentIndex);
             if (startBracket == -1) break;
-            
+
             int endBracket = delimiterSection.indexOf(']', startBracket);
             if (endBracket == -1) break;
-            
-            String delimiter = delimiterSection.substring(startBracket + 1, endBracket);
+
+            String delimiter = delimiterSection.substring(
+              startBracket + 1,
+              endBracket,
+            );
             delimiters.add(delimiter);
             currentIndex = endBracket + 1;
           }
-          
+
           return delimiters.isNotEmpty ? delimiters : [',', '\n'];
         } else {
           // Single character custom delimiter
@@ -98,11 +101,14 @@ class StringCalculator {
   }
 
   /// Split a string by multiple delimiters.
-  List<String> _splitByMultipleDelimiters(String input, List<String> delimiters) {
+  List<String> _splitByMultipleDelimiters(
+    String input,
+    List<String> delimiters,
+  ) {
     if (delimiters.isEmpty) return [input];
-    
+
     List<String> result = [input];
-    
+
     for (String delimiter in delimiters) {
       List<String> newResult = [];
       for (String part in result) {
@@ -110,7 +116,7 @@ class StringCalculator {
       }
       result = newResult;
     }
-    
+
     return result;
   }
 
