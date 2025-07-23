@@ -65,10 +65,19 @@ class StringCalculator {
   /// Returns the custom delimiter if present, otherwise returns default delimiter pattern.
   String _extractDelimiter(String input) {
     if (input.startsWith('//')) {
-      // Custom delimiter format: //[delimiter]\n[numbers]
+      // Custom delimiter format: //[delimiter]\n[numbers] or //delimiter\n[numbers]
       int newlineIndex = input.indexOf('\n');
       if (newlineIndex != -1 && newlineIndex > 2) {
-        return input.substring(2, newlineIndex);
+        String delimiterSection = input.substring(2, newlineIndex);
+        
+        // Check for square bracket format: [delimiter]
+        if (delimiterSection.startsWith('[') && delimiterSection.endsWith(']')) {
+          // Extract delimiter from within brackets
+          return delimiterSection.substring(1, delimiterSection.length - 1);
+        } else {
+          // Single character custom delimiter
+          return delimiterSection;
+        }
       }
     }
     return '[,\n]'; // Default delimiters

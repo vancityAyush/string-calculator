@@ -89,6 +89,14 @@ void main() {
       test('any length delimiters work', () {
         expect(calculator.add('//[***]\n1***2***3'), equals(6));
       });
+
+      test('single character bracket delimiter works', () {
+        expect(calculator.add('//[;]\n1;2;3'), equals(6));
+      });
+
+      test('very long delimiter works', () {
+        expect(calculator.add('//[---DELIM---]\n1---DELIM---2---DELIM---3'), equals(6));
+      });
     });
   });
 }
