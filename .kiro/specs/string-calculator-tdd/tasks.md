@@ -98,7 +98,7 @@
   - Commit changes with message: "feat: support custom delimiters"
   - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 9. Implement negative number validation (TDD Cycle 8)
+- [x] 9. Implement negative number validation (TDD Cycle 8)
 - [x] 9.1 Create NegativeNumberException class
   - Implement custom exception class with proper message formatting
   - Include list of negative numbers in exception details
@@ -111,22 +111,22 @@
   - Commit changes with message: "test: add test for negative numbers exception"
   - _Requirements: 7.1, 7.2_
 
-- [-] 9.3 Implement negative number detection and exception throwing
+- [x] 9.3 Implement negative number detection and exception throwing
   - Add validation logic to detect negative numbers
   - Throw NegativeNumberException with appropriate message
   - Ensure all previous positive number tests still pass (Green phase)
   - Commit changes with message: "feat: throw exception for negative numbers"
   - _Requirements: 7.1, 7.2_
 
-- [ ] 10. Implement multiple negative number handling (TDD Cycle 9)
-- [ ] 10.1 Write failing test for multiple negative numbers exception
+- [-] 10. Implement multiple negative number handling (TDD Cycle 9)
+- [x] 10.1 Write failing test for multiple negative numbers exception
   - Add test case that verifies add("-1,5,-10,-20") throws exception with all negatives
   - Verify exception message shows "Negatives not allowed: -1, -10, -20"
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for multiple negative numbers exception"
   - _Requirements: 7.3, 7.4_
 
-- [ ] 10.2 Enhance exception to show all negative numbers
+- [-] 10.2 Enhance exception to show all negative numbers
   - Modify validation logic to collect all negative numbers
   - Update exception message to include all negatives found
   - Ensure all previous tests still pass (Green phase)
