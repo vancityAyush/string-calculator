@@ -11,10 +11,10 @@ void main() {
 
     // Tests will be added incrementally through TDD cycles
     // Starting with the most basic functionality
-    
+
     group('Basic Operations', () {
       // Test cases will be added in subsequent TDD cycles
-      
+
       test('StringCalculator can be instantiated', () {
         expect(calculator, isA<StringCalculator>());
       });
@@ -38,7 +38,7 @@ void main() {
 
     group('Delimiter Support', () {
       // Test cases will be added in subsequent TDD cycles
-      
+
       test('newline delimiters work', () {
         expect(calculator.add('1\n2'), equals(3));
       });
@@ -54,10 +54,12 @@ void main() {
 
     group('Input Validation', () {
       // Test cases will be added in subsequent TDD cycles
-      
+
       test('negative numbers throw exception', () {
-        expect(() => calculator.add('-1'), 
-               throwsA(isA<NegativeNumberException>()));
+        expect(
+          () => calculator.add('-1'),
+          throwsA(isA<NegativeNumberException>()),
+        );
       });
 
       test('negative number exception contains correct message', () {
@@ -85,7 +87,7 @@ void main() {
 
     group('Edge Cases', () {
       // Test cases will be added in subsequent TDD cycles
-      
+
       test('any length delimiters work', () {
         expect(calculator.add('//[***]\n1***2***3'), equals(6));
       });
@@ -95,7 +97,14 @@ void main() {
       });
 
       test('very long delimiter works', () {
-        expect(calculator.add('//[---DELIM---]\n1---DELIM---2---DELIM---3'), equals(6));
+        expect(
+          calculator.add('//[---DELIM---]\n1---DELIM---2---DELIM---3'),
+          equals(6),
+        );
+      });
+
+      test('multiple different delimiters work', () {
+        expect(calculator.add('//[*][%]\n1*2%3'), equals(6));
       });
     });
   });

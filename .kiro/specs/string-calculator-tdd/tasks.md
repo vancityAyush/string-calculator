@@ -133,7 +133,7 @@
   - Commit changes with message: "feat: show all negative numbers in exception"
   - _Requirements: 7.3, 7.4_
 
-- [ ] 11. Implement large number filtering (TDD Cycle 10)
+- [x] 11. Implement large number filtering (TDD Cycle 10)
 - [x] 11.1 Write failing test for ignoring numbers greater than 1000
   - Add test case that verifies add("2,1001,5") returns 7
   - Run test to confirm it fails (Red phase)
@@ -146,14 +146,14 @@
   - Commit changes with message: "feat: ignore numbers greater than 1000"
   - _Requirements: 8.1, 8.2, 8.3_
 
-- [ ] 12. Implement variable-length custom delimiters (TDD Cycle 11)
-- [ ] 12.1 Write failing test for variable-length delimiters
+- [x] 12. Implement variable-length custom delimiters (TDD Cycle 11)
+- [x] 12.1 Write failing test for variable-length delimiters
   - Add test case that verifies add("//[***]\n1***2***3") returns 6
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for any length delimiters"
   - _Requirements: 9.1, 9.2, 9.3_
 
-- [ ] 12.2 Implement variable-length delimiter parsing
+- [x] 12.2 Implement variable-length delimiter parsing
   - Enhance custom delimiter logic to handle square bracket format
   - Support delimiters of any length within brackets
   - Ensure all previous tests still pass (Green phase)
