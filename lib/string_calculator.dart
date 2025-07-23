@@ -9,8 +9,18 @@ class StringCalculator {
       return 0;
     }
     
-    // Split by comma and newline delimiters and sum any amount of numbers
-    List<String> numberStrings = numbers.split(RegExp(r'[,\n]'));
+    String delimiter = _extractDelimiter(numbers);
+    String numbersSection = _extractNumbersSection(numbers);
+    
+    // Split by the appropriate delimiter and sum any amount of numbers
+    List<String> numberStrings;
+    if (numbers.startsWith('//')) {
+      // Use only the custom delimiter
+      numberStrings = numbersSection.split(delimiter);
+    } else {
+      // Use default delimiters (comma and newline)
+      numberStrings = numbersSection.split(RegExp(r'[,\n]'));
+    }
     int sum = 0;
     for (String numberString in numberStrings) {
       if (numberString.isNotEmpty) {
@@ -18,5 +28,30 @@ class StringCalculator {
       }
     }
     return sum;
+  }
+  
+  /// Extract the delimiter from the input string.
+  /// Returns the custom delimiter if present, otherwise returns default delimiter pattern.
+  String _extractDelimiter(String input) {
+    if (input.startsWith('//')) {
+      // Custom delimiter format: //[delimiter]\n[numbers]
+      int newlineIndex = input.indexOf('\n');
+      if (newlineIndex != -1 && newlineIndex > 2) {
+        return input.substring(2, newlineIndex);
+      }
+    }
+    return '[,\n]'; // Default delimiters
+  }
+  
+  /// Extract the numbers section from the input string.
+  /// Removes the custom delimiter prefix if present.
+  String _extractNumbersSection(String input) {
+    if (input.startsWith('//')) {
+      int newlineIndex = input.indexOf('\n');
+      if (newlineIndex != -1) {
+        return input.substring(newlineIndex + 1);
+      }
+    }
+    return input;
   }
 }
