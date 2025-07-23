@@ -45,40 +45,40 @@
   - Commit changes with message: "feat: implement comma separated numbers parsing"
   - _Requirements: 3.1, 3.2_
 
-- [-] 5. Implement multiple comma-separated numbers (TDD Cycle 4)
+- [x] 5. Implement multiple comma-separated numbers (TDD Cycle 4)
 - [x] 5.1 Write failing test for multiple comma-separated numbers
   - Add test case that verifies add("1,2,3,4,5") returns 15
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for multiple comma separated numbers"
   - _Requirements: 4.1, 4.2, 4.3_
 
-- [-] 5.2 Implement unlimited number handling
+- [x] 5.2 Implement unlimited number handling
   - Enhance add method to handle any amount of comma-separated numbers
   - Ensure all previous tests still pass (Green phase)
   - Commit changes with message: "feat: handle unlimited numbers"
   - _Requirements: 4.1, 4.2, 4.3_
 
-- [ ] 6. Implement newline delimiter support (TDD Cycle 5)
-- [ ] 6.1 Write failing test for newline delimiters
+- [x] 6. Implement newline delimiter support (TDD Cycle 5)
+- [x] 6.1 Write failing test for newline delimiters
   - Add test case that verifies add("1\n2") returns 3
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for newline delimiters"
   - _Requirements: 5.1, 5.2_
 
-- [ ] 6.2 Implement newline delimiter parsing
+- [x] 6.2 Implement newline delimiter parsing
   - Modify add method to handle both comma and newline delimiters
   - Ensure all previous tests still pass (Green phase)
   - Commit changes with message: "feat: support newline delimiters"
   - _Requirements: 5.1, 5.2_
 
-- [ ] 7. Implement mixed delimiter support (TDD Cycle 6)
-- [ ] 7.1 Write failing test for mixed delimiters
+- [-] 7. Implement mixed delimiter support (TDD Cycle 6)
+- [x] 7.1 Write failing test for mixed delimiters
   - Add test case that verifies add("1\n,2,3\n4,5") returns 15
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for mixed delimiters"
   - _Requirements: 5.3, 5.4_
 
-- [ ] 7.2 Implement mixed delimiter handling
+- [-] 7.2 Implement mixed delimiter handling
   - Enhance delimiter parsing to handle mixed comma and newline formats
   - Ensure all previous tests still pass (Green phase)
   - Commit changes with message: "feat: support mixed comma and newline delimiters"
