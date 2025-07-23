@@ -54,6 +54,20 @@ void main() {
 
     group('Input Validation', () {
       // Test cases will be added in subsequent TDD cycles
+      
+      test('negative numbers throw exception', () {
+        expect(() => calculator.add('-1'), 
+               throwsA(isA<NegativeNumberException>()));
+      });
+
+      test('negative number exception contains correct message', () {
+        try {
+          calculator.add('-1');
+          fail('Expected NegativeNumberException to be thrown');
+        } catch (e) {
+          expect(e.toString(), contains('Negatives not allowed: -1'));
+        }
+      });
     });
 
     group('Edge Cases', () {

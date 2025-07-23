@@ -71,27 +71,27 @@
   - Commit changes with message: "feat: support newline delimiters"
   - _Requirements: 5.1, 5.2_
 
-- [-] 7. Implement mixed delimiter support (TDD Cycle 6)
+- [x] 7. Implement mixed delimiter support (TDD Cycle 6)
 - [x] 7.1 Write failing test for mixed delimiters
   - Add test case that verifies add("1\n,2,3\n4,5") returns 15
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for mixed delimiters"
   - _Requirements: 5.3, 5.4_
 
-- [-] 7.2 Implement mixed delimiter handling
+- [x] 7.2 Implement mixed delimiter handling
   - Enhance delimiter parsing to handle mixed comma and newline formats
   - Ensure all previous tests still pass (Green phase)
   - Commit changes with message: "feat: support mixed comma and newline delimiters"
   - _Requirements: 5.3, 5.4_
 
-- [ ] 8. Implement custom delimiter support (TDD Cycle 7)
-- [ ] 8.1 Write failing test for custom delimiters
+- [x] 8. Implement custom delimiter support (TDD Cycle 7)
+- [x] 8.1 Write failing test for custom delimiters
   - Add test case that verifies add("//;\n1;2") returns 3
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for custom delimiters"
   - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 8.2 Implement custom delimiter parsing
+- [x] 8.2 Implement custom delimiter parsing
   - Add logic to detect and parse custom delimiter format
   - Create helper methods for delimiter extraction and number section parsing
   - Ensure all previous tests still pass (Green phase)
@@ -99,12 +99,12 @@
   - _Requirements: 6.1, 6.2, 6.3_
 
 - [ ] 9. Implement negative number validation (TDD Cycle 8)
-- [ ] 9.1 Create NegativeNumberException class
+- [x] 9.1 Create NegativeNumberException class
   - Implement custom exception class with proper message formatting
   - Include list of negative numbers in exception details
   - _Requirements: 7.1, 7.2_
 
-- [ ] 9.2 Write failing test for single negative number exception
+- [-] 9.2 Write failing test for single negative number exception
   - Add test case that verifies add("-1") throws NegativeNumberException
   - Verify exception message contains "Negatives not allowed: -1"
   - Run test to confirm it fails (Red phase)

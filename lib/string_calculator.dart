@@ -1,3 +1,15 @@
+/// Custom exception thrown when negative numbers are encountered.
+class NegativeNumberException implements Exception {
+  final List<int> negativeNumbers;
+  final String message;
+  
+  NegativeNumberException(this.negativeNumbers) 
+    : message = 'Negatives not allowed: ${negativeNumbers.join(', ')}';
+  
+  @override
+  String toString() => message;
+}
+
 /// A string calculator that performs addition operations on numbers 
 /// provided as strings with various delimiter formats.
 class StringCalculator {
