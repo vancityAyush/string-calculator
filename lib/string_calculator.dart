@@ -21,14 +21,14 @@ class StringCalculator {
       return 0;
     }
 
-    String delimiter = _extractDelimiter(numbers);
+    List<String> delimiters = _extractDelimiters(numbers);
     String numbersSection = _extractNumbersSection(numbers);
 
     // Split by the appropriate delimiter and sum any amount of numbers
     List<String> numberStrings;
     if (numbers.startsWith('//')) {
-      // Use only the custom delimiter
-      numberStrings = numbersSection.split(delimiter);
+      // Use custom delimiters
+      numberStrings = _splitByMultipleDelimiters(numbersSection, delimiters);
     } else {
       // Use default delimiters (comma and newline)
       numberStrings = numbersSection.split(RegExp(r'[,\n]'));
@@ -61,27 +61,57 @@ class StringCalculator {
     return sum;
   }
 
-  /// Extract the delimiter from the input string.
-  /// Returns the custom delimiter if present, otherwise returns default delimiter pattern.
-  String _extractDelimiter(String input) {
+  /// Extract delimiters from the input string.
+  /// Returns a list of custom delimiters if present, otherwise returns default delimiters.
+  List<String> _extractDelimiters(String input) {
     if (input.startsWith('//')) {
-      // Custom delimiter format: //[delimiter]\n[numbers] or //delimiter\n[numbers]
+      // Custom delimiter format: //[delimiter1][delimiter2]...\n[numbers] or //delimiter\n[numbers]
       int newlineIndex = input.indexOf('\n');
       if (newlineIndex != -1 && newlineIndex > 2) {
         String delimiterSection = input.substring(2, newlineIndex);
 
-        // Check for square bracket format: [delimiter]
-        if (delimiterSection.startsWith('[') &&
-            delimiterSection.endsWith(']')) {
-          // Extract delimiter from within brackets
-          return delimiterSection.substring(1, delimiterSection.length - 1);
+        // Check for multiple bracket format: [delimiter1][delimiter2]...
+        if (delimiterSection.contains('[') && delimiterSection.contains(']')) {
+          List<String> delimiters = [];
+          int currentIndex = 0;
+          
+          while (currentIndex < delimiterSection.length) {
+            int startBracket = delimiterSection.indexOf('[', currentIndex);
+            if (startBracket == -1) break;
+            
+            int endBracket = delimiterSection.indexOf(']', startBracket);
+            if (endBracket == -1) break;
+            
+            String delimiter = delimiterSection.substring(startBracket + 1, endBracket);
+            delimiters.add(delimiter);
+            currentIndex = endBracket + 1;
+          }
+          
+          return delimiters.isNotEmpty ? delimiters : [',', '\n'];
         } else {
           // Single character custom delimiter
-          return delimiterSection;
+          return [delimiterSection];
         }
       }
     }
-    return '[,\n]'; // Default delimiters
+    return [',', '\n']; // Default delimiters
+  }
+
+  /// Split a string by multiple delimiters.
+  List<String> _splitByMultipleDelimiters(String input, List<String> delimiters) {
+    if (delimiters.isEmpty) return [input];
+    
+    List<String> result = [input];
+    
+    for (String delimiter in delimiters) {
+      List<String> newResult = [];
+      for (String part in result) {
+        newResult.addAll(part.split(delimiter));
+      }
+      result = newResult;
+    }
+    
+    return result;
   }
 
   /// Extract the numbers section from the input string.
