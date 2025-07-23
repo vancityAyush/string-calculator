@@ -53,7 +53,10 @@ class StringCalculator {
     
     int sum = 0;
     for (int number in parsedNumbers) {
-      sum += number;
+      // Ignore numbers greater than 1000
+      if (number <= 1000) {
+        sum += number;
+      }
     }
     return sum;
   }
