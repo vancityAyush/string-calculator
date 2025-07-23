@@ -9,7 +9,12 @@ class StringCalculator {
       return 0;
     }
     
-    // Parse single number
-    return int.parse(numbers);
+    // Split by comma and sum the numbers
+    List<String> numberStrings = numbers.split(',');
+    int sum = 0;
+    for (String numberString in numberStrings) {
+      sum += int.parse(numberString);
+    }
+    return sum;
   }
 }
