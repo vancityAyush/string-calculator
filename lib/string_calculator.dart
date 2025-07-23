@@ -9,7 +9,7 @@ class StringCalculator {
       return 0;
     }
     
-    // Implementation will be built incrementally through TDD
-    throw UnimplementedError('Implementation will be added through TDD cycles');
+    // Parse single number
+    return int.parse(numbers);
   }
 }

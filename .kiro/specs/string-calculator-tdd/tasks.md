@@ -20,13 +20,13 @@
   - _Requirements: 1.1_
 
 - [-] 3. Implement single number handling (TDD Cycle 2)
-- [-] 3.1 Write failing test for single number returns value
+- [x] 3.1 Write failing test for single number returns value
   - Add test case that verifies add("1") returns 1
   - Run test to confirm it fails (Red phase)
   - Commit changes with message: "test: add test for single number returns value"
   - _Requirements: 2.1, 2.2_
 
-- [ ] 3.2 Implement single number parsing
+- [-] 3.2 Implement single number parsing
   - Modify add method to parse and return single numbers
   - Ensure both empty string and single number tests pass (Green phase)
   - Commit changes with message: "feat: implement single number parsing"
